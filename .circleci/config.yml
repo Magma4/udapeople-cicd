@@ -1,24 +1,5 @@
 version: 2.1
 
-version: 2.1
-
-workflows:
-  test-env-vars:
-    jobs:
-      - build
-
-jobs:
-  build:
-    docker:
-      - image: cimg/base
-
-    steps:
-      - checkout
-      - run:
-          name: "SLACK_ACCESS_TOKEN"
-          command: |
-            echo $SLACK_ACCESS_TOKEN # this env var must be set within the project
-
 orbs:
   slack: circleci/slack@4.9.3
 
