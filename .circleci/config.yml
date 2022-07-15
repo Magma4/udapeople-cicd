@@ -8,7 +8,7 @@ commands:
     steps:
       - slack/notify:
           event: fail
-          channel: Udapeople CI/CD
+          channel: cicd-pipeline
           template: basic_fail_1
 
 #   destroy-environment:
@@ -310,11 +310,11 @@ jobs:
             
   notify_on_success:
     docker:
-       - image: 'cimg/base:stable'
+       - image: cimg/base:stable
     steps:
       - slack/notify:
           event: pass
-          channel: Udapeople CI/CD
+          channel: cicd-pipeline
           template: success_tagged_deployment_1
 
 workflows:
