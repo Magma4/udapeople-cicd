@@ -1,26 +1,7 @@
 version: 2.1
 
-workflows:
-  my-workflow:
-    jobs:
-      - run-tests:
-          context:
-            - org-global
-            - udapeople
-
-jobs:
-  run-tests:
-    docker:
-      - image: cimg/node:13.8.0
-
-    steps:
-      - checkout
-      - run:
-          name: "echo environment variables from org-global context"
-          command: echo $MY_ENV_VAR
-
 orbs:
-  slack: circleci/slack@4.9.3
+  slack: circleci/slack@4.10.1
 
 commands:
   notify_on_failure:
