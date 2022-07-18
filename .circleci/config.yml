@@ -67,7 +67,8 @@ jobs:
             cd frontend
             npm install
             npm run build   
-            npm install --save-dev webpack@5.73.0         
+            npm install --save-dev webpack@3.3.5
+            npm audit fix --force
       - save_cache:
           paths: [frontend/node_modules]
           key: frontend-deps
