@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  slack: circleci/slack@4.10.1
-
 commands:
     install_awscli:
       description: Install AWS CLI v2
@@ -29,7 +26,7 @@ commands:
       description: Install Webpack-CLI
       steps:
         - run:
-            name: Install Webpack-CLI v2
+            name: Install Webpack-CLI
             command: |
               npm install --save-dev webpack-cli
               npm i webpack-cli @webpack-cli/init
@@ -68,7 +65,7 @@ commands:
 jobs:
   build-frontend:
     docker:
-      - image: cimg/node:13.8.0
+      - image: cimg/node:16.0.0
     steps:
       - checkout
       - restore_cache:
@@ -102,7 +99,7 @@ jobs:
 
   test-frontend:
     docker:
-      - image: cimg/node:13.8.0
+      - image: cimg/node:16.0.0
     steps:
       - checkout
       - restore_cache:
@@ -131,7 +128,7 @@ jobs:
             
   scan-frontend:
     docker:
-      - image: cimg/node:13.8.0
+      - image: cimg/node:16.0.0
     steps:
       - checkout
       - restore_cache:
