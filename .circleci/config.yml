@@ -32,6 +32,7 @@ commands:
             name: Install Webpack-CLI v2
             command: |
               npm install --save-dev webpack-cli
+              npm i webpack-cli @webpack-cli/init
 
 #   destroy-environment:
 #     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
