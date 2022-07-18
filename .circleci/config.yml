@@ -25,6 +25,14 @@ commands:
               sudo add-apt-repository --yes --update ppa:ansible/ansible
               sudo apt install ansible
 
+    install_webpack-cli:
+      description: Install Webpack-CLI
+      steps:
+        - run:
+            name: Install Webpack-CLI v2
+            command: |
+              npm install --save-dev webpack-cli
+
 #   destroy-environment:
 #     description: Destroy back-end and front-end cloudformation stacks given a workflow ID.
 #     parameters:
