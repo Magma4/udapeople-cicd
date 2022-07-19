@@ -67,6 +67,7 @@ jobs:
             cd frontend
             npm install
             npm run build
+            npm install --save-dev webpack-dev-server@1.9.0 -g
 
       - save_cache:
           paths: [frontend/node_modules]
