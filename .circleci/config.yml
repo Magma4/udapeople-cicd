@@ -60,12 +60,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys: [frontend-deps]
+          keys: [frontend-build]
       - run:
           name: Build front-end
           command: |
             cd frontend
-            npm ci
+            npm install
             npm run build
 
       - save_cache:
