@@ -60,7 +60,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          keys: [frontend-build]
+          keys: [frontend-deps]
       - run:
           name: Build front-end
           command: |
@@ -150,7 +150,7 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      - image: cimg/base:stable
+      - image: amazon/aws-cli
     steps:
       - checkout
       - install_awscli
