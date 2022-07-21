@@ -191,13 +191,14 @@ jobs:
           paths:
             - project/.circleci/ansible/inventory.txt
 
-      # - destroy-environment 
+      - destroy-environment 
 
   configure-infrastructure:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/python:3.10
     steps:
       - checkout
+      - install_awscli
       - install_ansible
       - add_ssh_keys:
           fingerprints: ["9c:90:b4:0a:d2:2e:69:21:47:4c:29:30:24:5c:ce:a9"]
@@ -209,7 +210,7 @@ jobs:
             cd .circleci/ansible
             cat inventory.txt
             ansible-playbook -i inventory.txt configure-server.yml
-      # - destroy-environment
+      - destroy-environment
 #   run-migrations:
 #     docker:
 #       # Docker image here that supports NodeJS
