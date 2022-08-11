@@ -11,4 +11,4 @@
    ec2-44-235-171-168.us-west-2.compute.amazonaws.com
 
 5. Public URL to your Prometheus Server [URL05]:
-   ec2-35-89-14-39.us-west-2.compute.amazonaws.com
+   ec2-35-89-54-122.us-west-2.compute.amazonaws.com
